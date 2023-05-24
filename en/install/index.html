@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/3tafavicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>3TA Online</title>
+    <meta content="3TA Online" property="og:title">
+    <meta content="3TA Online is a revival project/community. check us out." property="og:description">
+    <meta content="https://3taonline.com" property="og:url">
+    <meta content="https://3taonline.com/images/3taologo.webp" property="og:image">
+    <meta content="#2636c4" data-react-helmet="true" name="theme-color">
+    <!--Google fonts code-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        #discsection {
+            text-align: left;
+        }
+        #digitalsection {
+            text-align: left;
+        }
+        #disc {
+            text-align: left;
+            cursor: pointer;
+        }
+        #digital {
+            text-align: left;
+            cursor: pointer;
+        }
+
+        #flashingmsgp {
+            text-align: left; 
+            color: gray;
+            animation: flashingred linear 1s infinite normal;
+            float: right;
+        }
+
+        #buygta5 {
+            text-align: left;
+            cursor: pointer;
+        }
+
+        #buygta5section {
+            text-align: left;
+        }
+        
+        @keyframes flashingred {
+            0% {
+                color: rgb(0, 0, 0);
+                background-color: rgb(255, 0, 0);
+            }
+            50% {
+                color: rgb(255, 0, 0);
+                background-color: rgb(0, 0, 0);
+            }
+            100% {
+                color: rgb(0, 0, 0);
+                background-color: rgb(255, 0, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/"><img src="/images/3taologo.webp" alt="" width="92"></a>
+        <div id="links">
+            <a href="https://discord.gg/3taonline">Discord</a>
+            <a href="https://www.youtube.com/@3TAOnline">YouTube</a>
+        </div>
+    </header>
+    <main>
+        <p id="flashingmsgp"><b>WE DO NOT CONDONE PIRACY</b></p>
+        <h1>How To Install</h1>
+        <hr>
+        <h2 id="buygta5" onclick="hideopen(3)">⇨ Getting Started</h2>
+        <section id="buygta5section" hidden>
+            <h3>Buying GTA 5</h3>
+            <p>I would recommend you buy the a disc version of the game as its the easiest to install. (would also recommend the BLES version if you want to mod). you can find these on <a href="https://www.ebay.com/sch/i.html?_nkw=Grand+Theft+Auto+V+PS3">eBay</a> or you could also look at stores such as Cash Converters (if you are in <a href="https://www.cashconverters.com.au/search-results?query=Grand%20Theft%20Auto%20V%20PlayStation%203">Australia</a>, 
+                <a href="https://shop.cashconverters.co.nz/Browse?FullTextQuery=Grand%20Theft%20Auto%20V%20PS3">New Zealand</a>, or <a href="https://www.cashconverters.co.uk/search-results?query=Grand%20Theft%20Auto%20V%20PlayStation%203">United Kingdom</a>) and if your in the US you can try <a href="https://www.dkoldies.com/grand-theft-auto-v-ps3-game/">dkoldies</a> (please note it is the BLUS Copy of the Game)</p>
+            <h3>Buying a PlayStation 3 and Jailbreaking it</h3>
+            <p>There are currently 2 exploits for the PS3. </p>
+            <p><b><u>PS3HEN (Homebrew ENabler)</u></b> <br> <b>Released: May, 2019</b> <br> Pros</p>
+            <ul>
+                <li>Less likely to get banned from PlayStation Network (not really an issue anymore)</li>
+                <li>Works on all PS3 Models (Fat, Slim, & Super Slims)</li>
+            </ul>
+            <p>Cons</p>
+            <ul>
+                <li>Most mods on PS3 aren't supported</li>
+                <li>Harder to sign games with licence files</li>
+                <li>Cannot run Linux</li>
+                <li>Cannot downgrade firmware</li>
+            </ul>
+            <p><b><u>CFW (Custom FirmWare)</u></b> <br> <b>Released: March, 2011</b> <br> Pros</p>
+            <ul>
+                <li>Seeing as the Exploit is older. there is alot of mod support and much more articles to help that only work on CFW</li>
+                <li>Can bring back to OtherOS which Sony removed in the famous update 3.21</li>
+                <li>Easier to make mods for (more support and tools)</li>
+            </ul>
+            <p>Cons</p>
+            <ul>
+                <li>maybe 0.1% chance to get banned (but really easy to get around and Sony has stop seeming to ban consoles/accounts anymore since Rockstar Games shutdown official servers on December 16th, 2021)</li>
+                <li>Only Supports Fat Models, & only the PS3 Slim (All CECH-20xx, CECH-21xx, & some of the CECH-25xx models)</li>
+            </ul>
+        </section>
+        <hr>
+        <h2>Make sure you backup any modded files if you want to save them for later</h2>
+        <hr>
+        <h2 id="disc" onclick="hideopen(1)">⇨ Disc version</h2>
+        <section id="discsection" hidden>
+            <h4>1. Uninstall old game updates</h4>
+            <img src="/images/gamedata.jpg" alt="Game Data Utility in Game Catagory" width="400">
+            <img src="/images/gta5discgamedata.jpg" alt="GTA 5 in Game Data Utility" width="400">
+            <img src="/images/gta5optionsmenugamedata.jpg" alt="GTA 5 options in Game Data Utility" width="400">
+            <img src="/images/gta5delete.png" alt="" width="400">
+            <h4>2. Install the PKG for your version (usb or /dev_hdd0/packages)</h4>
+            <p>if you are installing from USB make sure your USB is formatted in FAT32 (if it is over 32gb you can try <a href="http://ridgecrop.co.uk/index.htm?guiformat.htm">fat32format</a> or <a href="https://rufus.ie/">Rufus</a> to format your flash drive)</p>
+            <img src="/images/usb.jpg" alt="" title="Here is how your flash drive should look like if want to install USB" width="400"><br>
+            <video src="/videos/3tainstalldisc.mp4" controls width="410"></video>
+        </section>
+        <hr>
+        <h2 id="digital" onclick="hideopen(2)">⇨ Digital version</h2>
+        <section id="digitalsection" hidden>
+            <h4>1. Reinstall Game</h4>
+            <p><i>yes i know this is really slow (but the digital game versions are very limiting)</i></p>
+            <h5>Uninstall Game</h5>
+            <img src="/images/deletingdigital.jpg" alt="" width="400">
+            <h5>then install from the file (PKG) and sign with your licence file (RAP)</h5>
+            <h4>2. DO NOT UPDATE the game and Install 3TA Online PKG</h4>
+            <video src="/videos/3tainstalldisc.mp4" controls width="410" title="Installing 3TA Online"></video> <!-- We use the same video to save bandwidth-->
+        </section>
+        
+        <hr>
+    </main>
+    <script>
+        var disctag = "?disc";
+        var digitaltag = "?digital";
+        var disc = document.getElementById('disc');
+        var digital = document.getElementById('digital');
+        var discsection = document.getElementById('discsection');
+        var digitalsection = document.getElementById('digitalsection');
+        var buygta5section = document.getElementById('buygta5section');
+        var buygta5 = document.getElementById('buygta5');
+        
+
+        function hideopen(item)
+        {
+            if (item == 1)
+            {
+                if (disc.innerText == "⇨ Disc version")
+                {
+                    discsection.hidden = false;
+                    disc.innerText = "⇩ Disc version";
+                }
+                else 
+                {
+                    discsection.hidden = true;
+                    disc.innerText = "⇨ Disc version";
+                }
+            }
+            else if (item == 2)
+            {
+                if (digital.innerText == "⇨ Digital version")
+                {
+                    digitalsection.hidden = false;
+                    digital.innerText = "⇩ Digital version";
+                }
+                else 
+                {
+                    digitalsection.hidden = true;
+                    digital.innerText = "⇨ Digital version";
+                }
+            }
+            else if (item == 3)
+            {
+                if (buygta5.innerText == "⇨ Getting Started")
+                {
+                    buygta5section.hidden = false;
+                    buygta5.innerText = "⇩ Getting Started";
+                }
+                else 
+                {
+                    buygta5section.hidden = true;
+                    buygta5.innerText = "⇨ Getting Started";
+                }
+            }
+        }
+
+        function button()
+        {
+            if (document.location.search == disctag)
+            {
+                hideopen(1);
+            }
+            else if (document.location.search == digitaltag) 
+            {
+                hideopen(2);
+            }
+        }
+
+        button();
+    </script>
+</body>
+
+</html>
