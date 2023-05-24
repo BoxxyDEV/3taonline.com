@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/3tafavicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>3TA Online</title>
+    <!--Google fonts code-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        main button {
+            padding: 15px;
+            border-radius: 30px;
+            border: none;
+            background-color: #2636c4;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/"><img src="images/3taologo.webp" alt="" width="92"></a>
+        <div id="links">
+            <a href="https://discord.gg/3taonline">Discord</a>
+            <a href="https://www.youtube.com/@3TAOnline">YouTube</a>
+        </div>
+    </header>
+    <main>
+        <h1 id="mainh1"></h1>
+    </main>
+    <script>
+        var mainh1 = document.getElementById('mainh1');
+        var path = document.location.pathname.toLowerCase();
+        if (path == "/bles" || path == "/bles/")
+        {
+            mainh1.innerText = "Taking you to the BLES version of AIO PKG";
+            document.location = "https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/file/BI8RwT6K";
+        }
+        else if (path == "/blus" || path == "/blus/")
+        {
+            mainh1.innerText = "Taking you to the BLUS version of AIO PKG";
+            document.location = "https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/file/ZJlTALDb"
+        }
+        else if (path == "/npeb" || path == "/npep/")
+        {
+            mainh1.innerText = "Taking you to the NPEB version of AIO PKG";
+            document.location = "https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/file/FJl13ZRQ"
+        }
+        else if (path == "/npub" || path == "/npub/")
+        {
+            mainh1.innerText = "Taking you to the NPUB version of AIO PKG";
+            document.location = "https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/file/ER11VbhB";
+        }
+        else {
+            mainh1.innerText = "oops sorry i dont know how you got here";
+        }
+    </script>
+</body>
+</html>
