@@ -24,10 +24,14 @@
             background-color: #2636c4;
             color: white;
         }
+
+        #ps3webman  {
+            align-items: center;
+        }
     </style>
 </head>
 <body>
-    <header>
+    <header id="header1" style="opacity: 0;">
         <a href="/"><img src="images/3taologo.webp" alt="" width="92"></a>
         <div id="links">
             <a href="https://discord.gg/3taonline">Discord</a>
@@ -45,21 +49,84 @@
             <a href="/en/install?digital"><button>Digital</button></a>
         </div>
         <br>
-        <form action="https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/folder/tYsyyI6L"><button>Other language version (Hosted by JIREX on MEGA)</button></form>
-        <h5>Disc versions</h5>
-        <form action="https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/folder/FctzBBKC" method="get">
-            <button>BLES01807</button>
-        </form>
-        <form action="https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/folder/4FsRjLiY" method="get">
-            <button>BLUS31156</button>
-        </form>
-        <h5>Digital versions</h5>
-        <form action="https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/folder/BFk1VJTR" method="get">
-            <button>NPEB01283</button>
-        </form>
-        <form action="https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/folder/9d130D6Z" method="get">
-            <button>NPUB31154</button>
-        </form>
+        <form action="https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/folder/tYsyyI6L" id="otherlanguages"><button>Other language version (Hosted by JIREX on MEGA)</button></form>
+        <section id="ps3webman">
+            <h5>Install (via webman)</h5>
+            <form action="">
+                <a href="#"><button onclick="install(1)">BLES01807</button></a>
+                <a href="#"><button onclick="install(2)">BLUS31156</button></a>
+                <a href="#"><button onclick="install(3)">NPEB01283</button></a>
+                <a href="#"><button onclick="install(4)">NPUB31154</button></a>
+            </form>
+            
+        </section>
+        <section id="megalink">
+            <h5>Disc versions (MEGA)</h5>
+            <form action="https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/folder/FctzBBKC" method="get">
+                <button>BLES01807</button>
+            </form>
+            <form action="https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/folder/4FsRjLiY" method="get">
+                <button>BLUS31156</button>
+            </form>
+            <h5>Digital versions (MEGA)</h5>
+            <form action="https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/folder/BFk1VJTR" method="get">
+                <button>NPEB01283</button>
+            </form>
+            <form action="https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/folder/9d130D6Z" method="get">
+                <button>NPUB31154</button>
+            </form>
+        </section>
+        
     </main>
+    <script>
+        var blespkg = "https://cdn.discordapp.com/attachments/1111481336578965644/1111482463609425930/3taonlinebles.pkg";
+        var bluspkg = "https://cdn.discordapp.com/attachments/1111481336578965644/1111483447924510753/3taonlineblus.pkg";
+        var npebpkg = "https://cdn.discordapp.com/attachments/1111481336578965644/1111483948401430538/3taonlinenpeb.pkg";
+        var npubpkg = "https://cdn.discordapp.com/attachments/1111481336578965644/1111484717737447573/3taonlinenpub.pkg";
+
+        var ps3webmaninstall = document.getElementById('ps3webman');
+        var header = document.getElementById('header1');
+        var megalink = document.getElementById('megalink');
+        var otherlanguages = document.getElementById('otherlanguages');
+
+        function install(num)
+        {
+            
+            const ps3req = new XMLHttpRequest();
+            if (num == 1)
+            {
+                //BLES
+                ps3req.open("GET", "http://127.0.0.1/xmb.ps3/install.ps3?url=" + blespkg);
+            }
+            if (num == 2)
+            {
+                //BLUS
+                ps3req.open("GET", "http://127.0.0.1/xmb.ps3/install.ps3?url=" + bluspkg);
+            }
+            if (num == 3)
+            {
+                //NPEB
+                ps3req.open("GET", "http://127.0.0.1/xmb.ps3/install.ps3?url=" + npebpkg);
+            }
+            if (num == 4)
+            {
+                //NPEB
+                ps3req.open("GET", "http://127.0.0.1/xmb.ps3/install.ps3?url=" + npubpkg);
+            }
+            ps3req.send();
+        }
+
+        if (navigator.platform != "PlayStation 3")
+        {
+            ps3webmaninstall.hidden = true;
+            header.style.opacity = "255";
+            
+        }
+        else
+        {
+            megalink.parentElement.removeChild(megalink);
+            otherlanguages.parentElement.removeChild(otherlanguages);
+        }
+    </script>
 </body>
 </html>

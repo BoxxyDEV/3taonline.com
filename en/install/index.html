@@ -65,7 +65,7 @@
     </style>
 </head>
 <body>
-    <header>
+    <header id="header1" style="opacity: 0;">
         <a href="/"><img src="/images/3taologo.webp" alt="" width="92"></a>
         <div id="links">
             <a href="https://discord.gg/3taonline">Discord</a>
@@ -73,14 +73,14 @@
         </div>
     </header>
     <main>
-        <p id="flashingmsgp"><b>WE DO NOT CONDONE PIRACY</b></p>
+        <p id="flashingmsgp"><b>WE DO NOT CONDONE PIRACY</b></p><br><br>
         <h1>How To Install</h1>
         <hr>
         <h2 id="buygta5" onclick="hideopen(3)">⇨ Getting Started</h2>
         <section id="buygta5section" hidden>
             <h3>Buying GTA 5</h3>
             <p>I would recommend you buy the a disc version of the game as its the easiest to install. (would also recommend the BLES version if you want to mod). you can find these on <a href="https://www.ebay.com/sch/i.html?_nkw=Grand+Theft+Auto+V+PS3">eBay</a> or you could also look at stores such as Cash Converters (if you are in <a href="https://www.cashconverters.com.au/search-results?query=Grand%20Theft%20Auto%20V%20PlayStation%203">Australia</a>, 
-                <a href="https://shop.cashconverters.co.nz/Browse?FullTextQuery=Grand%20Theft%20Auto%20V%20PS3">New Zealand</a>, or <a href="https://www.cashconverters.co.uk/search-results?query=Grand%20Theft%20Auto%20V%20PlayStation%203">United Kingdom</a>) or you can also look at your local game stores</p>
+                <a href="https://shop.cashconverters.co.nz/Browse?FullTextQuery=Grand%20Theft%20Auto%20V%20PS3">New Zealand</a>, or <a href="https://www.cashconverters.co.uk/search-results?query=Grand%20Theft%20Auto%20V%20PlayStation%203">United Kingdom</a>) and if your in the US you can try <a href="https://www.dkoldies.com/grand-theft-auto-v-ps3-game/">dkoldies</a> (please note it is the BLUS Copy of the Game)</p>
             <h3>Buying a PlayStation 3 and Jailbreaking it</h3>
             <p>There are currently 2 exploits for the PS3. </p>
             <p><b><u>PS3HEN (Homebrew ENabler)</u></b> <br> <b>Released: May, 2019</b> <br> Pros</p>
@@ -131,7 +131,7 @@
             <img src="/images/deletingdigital.jpg" alt="" width="400">
             <h5>then install from the file (PKG) and sign with your licence file (RAP)</h5>
             <h4>2. DO NOT UPDATE the game and Install 3TA Online PKG</h4>
-            <video src="/videos/3tainstalldisc.mp4" controls width="410" title="Installing 3TA Online"></video> <!-- We use the same video to save bandwidth-->
+            <video src="/videos/3tainstalldisc.mp4" controls width="410" title="Installing 3TA Online" id="installing3ta"></video> <!-- We use the same video to save bandwidth-->
         </section>
         
         <hr>
@@ -146,6 +146,9 @@
         var buygta5section = document.getElementById('buygta5section');
         var buygta5 = document.getElementById('buygta5');
         
+        var header = document.getElementById('header1');
+        var installing3ta = document.getElementById('installing3ta');
+        
 
         function hideopen(item)
         {
@@ -154,12 +157,19 @@
                 if (disc.innerText == "⇨ Disc version")
                 {
                     discsection.hidden = false;
-                    disc.innerText = "⇩ Disc version";
+                    if (navigator.platform != "PlayStation 3")
+                    {
+                        disc.innerText = "⇩ Disc version";
+                    } 
                 }
                 else 
                 {
                     discsection.hidden = true;
-                    disc.innerText = "⇨ Disc version";
+                    
+                    if (navigator.platform != "PlayStation 3")
+                    {
+                        disc.innerText = "⇨ Disc version";
+                    } 
                 }
             }
             else if (item == 2)
@@ -167,12 +177,18 @@
                 if (digital.innerText == "⇨ Digital version")
                 {
                     digitalsection.hidden = false;
-                    digital.innerText = "⇩ Digital version";
+                    if (navigator.platform != "PlayStation 3")
+                    {
+                        digital.innerText = "⇩ Digital version";
+                    } 
                 }
                 else 
                 {
                     digitalsection.hidden = true;
-                    digital.innerText = "⇨ Digital version";
+                    if (navigator.platform != "PlayStation 3")
+                    {
+                        digital.innerText = "⇨ Digital version";
+                    } 
                 }
             }
             else if (item == 3)
@@ -181,11 +197,19 @@
                 {
                     buygta5section.hidden = false;
                     buygta5.innerText = "⇩ Getting Started";
+                    if (navigator.platform != "PlayStation 3")
+                    {
+                        buygta5.innerText = "⇩ Getting Started";
+                    }  
                 }
                 else 
                 {
                     buygta5section.hidden = true;
-                    buygta5.innerText = "⇨ Getting Started";
+                    if (navigator.platform != "PlayStation 3")
+                    {
+                        buygta5.innerText = "⇨ Getting Started";
+                    }       
+                    
                 }
             }
         }
@@ -203,6 +227,19 @@
         }
 
         button();
+        if (navigator.platform == "PlayStation 3")
+        {
+            disc.innerText = "Disc version";
+            digital.innerText = "Digital version";
+            buygta5.innerText = "Getting Started";
+            installing3ta.parentNode.removeChild(installing3ta);
+            header.style.opacity = "0";
+        }   
+        else 
+        {
+            header.style.opacity = "255";
+        }
+
     </script>
 </body>
 
