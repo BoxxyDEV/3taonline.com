@@ -51,16 +51,16 @@
         <br>
         <form action="https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/folder/tYsyyI6L" id="otherlanguages"><button>Other language version (Hosted by JIREX on MEGA)</button></form>
         <section id="ps3webman">
-            <h5>Install (via webman)</h5>
+            <h5>Download (via webman)</h5>
             <form action="">
-                <a href="#"><button onclick="install(1)">BLES01807</button></a>
-                <a href="#"><button onclick="install(2)">BLUS31156</button></a>
+                <a href="/en/ps3install/"><button onclick="install(1)">3TA Auto-Installer (disc copies only)</button></a>
+                <br>
                 <a href="#"><button onclick="install(3)">NPEB01283</button></a>
                 <a href="#"><button onclick="install(4)">NPUB31154</button></a>
             </form>
             
         </section>
-        <section id="megalink">
+        <div id="megalink">
             <h5>Disc versions (MEGA)</h5>
             <form action="https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/folder/FctzBBKC" method="get">
                 <button>BLES01807</button>
@@ -75,9 +75,11 @@
             <form action="https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/folder/9d130D6Z" method="get">
                 <button>NPUB31154</button>
             </form>
-        </section>
+        </div>
         
     </main>
+    <script src="/js/webmanmodwebcommands.js">
+    </script>
     <script>
         var blespkg = "https://cdn.discordapp.com/attachments/1111481336578965644/1111482463609425930/3taonlinebles.pkg";
         var bluspkg = "https://cdn.discordapp.com/attachments/1111481336578965644/1111483447924510753/3taonlineblus.pkg";
@@ -89,31 +91,20 @@
         var megalink = document.getElementById('megalink');
         var otherlanguages = document.getElementById('otherlanguages');
 
+        
+
         function install(num)
         {
-            
-            const ps3req = new XMLHttpRequest();
-            if (num == 1)
-            {
-                //BLES
-                ps3req.open("GET", "http://127.0.0.1/xmb.ps3/install.ps3?url=" + blespkg);
-            }
-            if (num == 2)
-            {
-                //BLUS
-                ps3req.open("GET", "http://127.0.0.1/xmb.ps3/install.ps3?url=" + bluspkg);
-            }
             if (num == 3)
             {
                 //NPEB
-                ps3req.open("GET", "http://127.0.0.1/xmb.ps3/install.ps3?url=" + npebpkg);
+                PS3AutoInstallPKG("127.0.0.1", npebpkg);
             }
             if (num == 4)
             {
                 //NPEB
-                ps3req.open("GET", "http://127.0.0.1/xmb.ps3/install.ps3?url=" + npubpkg);
+                PS3AutoInstallPKG("127.0.0.1", npubpkg);
             }
-            ps3req.send();
         }
 
         if (navigator.platform != "PlayStation 3")
@@ -124,9 +115,11 @@
         }
         else
         {
+            PS3Notify("127.0.0.1", "Welcome to 3TA Online \nWebman is Installed", "12"); // uses GET Request to contact webman running locally if PS3
             megalink.parentElement.removeChild(megalink);
             otherlanguages.parentElement.removeChild(otherlanguages);
         }
+        
     </script>
 </body>
 </html>

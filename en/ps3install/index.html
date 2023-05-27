@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="shortcut icon" href="/3tafavicon.ico" type="image/x-icon">
+    <title>3TA ez Install</title>
+    <style>
+        main ul li {
+            list-style-position: inside;
+        }
+    </style>
+</head>
+<body>
+    <header id="header1" style="opacity: 0;">
+        <a href="/"><img src="/images/3taologo.webp" alt="" width="92"></a>
+        <div id="links">
+            <a href="https://discord.gg/3taonline">Discord</a>
+            <a href="https://www.youtube.com/@3TAOnline">YouTube</a>
+        </div>
+    </header>
+    <main>
+        <h1>3TA Online Easy Install</h1>
+        <p>Requirements</p>
+        <ul>
+            <li>A PS3 running Custom Firmware or HEN</li>
+            <li>Webman Mod</li>
+        </ul>
+        <h2>Select Game Region</h2>
+        <div style="align-items: center;">
+            <input type="radio" name="region" id="BLES">
+            <label for="BLES">BLES01807</label>
+            <input type="radio" name="region" id="BLUS">
+            <label for="BLUS">BLUS31156</label>
+        </div>
+        <h4>Agree that we can delete /dev_hdd0/game/BLES01807 or /dev_hdd0/game/BLUS31156</h4>
+        <div style="align-items: center;">
+            <input type="checkbox" name="confirm" id="agree">
+            <label for="agree">I Agree</label>
+        </div>
+        <h3>Install</h3>
+        <div style="align-items: center;">
+            <button disabled id="proceed" onclick="autoinstall()">Proceed with Install</button>
+        </div>
+    </main>
+    <script src="/js/webmanmodwebcommands.js">
+    </script>
+    <script>
+        var header = document.getElementById('header1');
+        var agreebtn = document.getElementById('agree');
+        var proceed = document.getElementById('proceed');
+        var bles = document.getElementById('BLES');
+        var blus = document.getElementById('BLUS');
+
+
+        var blespkg = "https://cdn.discordapp.com/attachments/1111481336578965644/1111482463609425930/3taonlinebles.pkg";
+        var bluspkg = "https://cdn.discordapp.com/attachments/1111481336578965644/1111483447924510753/3taonlineblus.pkg";
+
+        if (navigator.platform == "PlayStation 3")
+        {
+            
+        }
+        else
+        {
+            header.style.opacity = "255";
+        }
+
+        function allowproceed()
+        {
+            if (agreebtn.checked == true)
+            {
+                proceed.disabled = false;
+            }
+            else 
+            {
+                proceed.disabled = true;
+            }
+        }
+
+        function autoinstall()
+        {
+            if (navigator.platform != "PlayStation 3")
+            {
+                alert('Please run this on a PS3 with webman mod this will not work');
+                return;
+            }
+            if (bles.checked)
+            {
+                var region = "BLES01807";
+                PS3Delete("127.0.0.1", "dev_hdd0/game/BLES01807");
+                PS3Notify("127.0.0.1", "3TA Online Installer \nDeleted /dev_hdd0/game/BLES01807/", "12");
+                PS3Notify("127.0.0.1", "Trophy Unlocked \n3TA Online Installing", "12");
+                PS3AutoInstallPKG("127.0.0.1", blespkg);
+            }
+            else if (blus.checked)
+            {
+                var region = "BLUS31156";
+                PS3Delete("127.0.0.1", "dev_hdd0/game/BLUS31156");
+                PS3Notify("127.0.0.1", "3TA Online Installer \nDeleted /dev_hdd0/game/BLUS31156/", "12");
+                PS3Notify("127.0.0.1", "Trophy Unlocked \n3TA Online Installing", "12");
+                PS3AutoInstallPKG("127.0.0.1", bluspkg);
+            }
+            else
+            {
+                alert('Please select a Region');
+                return;
+            }
+
+            
+        }
+        var a = setInterval(allowproceed, 100);
+    </script>
+</body>
+</html>
