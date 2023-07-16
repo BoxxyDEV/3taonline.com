@@ -48,3 +48,11 @@ main form button {
     color: white;
 }
 
+.btnhyperlinks {
+    background-color: #2636c4;
+    color: white;
+    padding: 15px;
+    border-radius: 30px;
+    text-decoration: none;
+    line-height: 4;
+}

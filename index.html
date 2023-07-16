@@ -43,21 +43,19 @@
         <p>3TA Online is revival project/community for GTA 5 on the PS3. <br>Check us out on <a href="https://discord.gg/3taonline">discord.gg/3taonline</a></p>
         <br style="height: 30px;">
         <h4>Download the 1.12 All-in-one PKG (with Jobs fixed) maintained by <a href="https://www.youtube.com/@JIREX">@JIREX (JIREX#4205)</a></h4>
-        <h5>How to Install (PLEASE READ BEFORE CLAIMING IT IS NOT WORKING in our discord)</h5>
+        <h5>How to Install</h5>
         <div id="buttons">
-            <a href="/en/install?disc"><button>Disc</button></a>
-            <a href="/en/install?digital"><button>Digital</button></a>
+            <a href="/en/install/?disc" class="btnhyperlinks">Guide (English)</a>
         </div>
         <br>
         <form action="https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/folder/tYsyyI6L" id="otherlanguages"><button>Other language version (Hosted by JIREX on MEGA)</button></form>
         <section id="ps3webman">
-            <h5>Download (via webman)</h5>
-            <form action="">
-                <a href="/en/ps3install/"><button onclick="install(1)">3TA Auto-Installer (disc copies only)</button></a>
+            <h5>Download & Install (via webman)</h5>
+                <button onclick="install(1)">BLES01807</button>
+                <button onclick="install(2)">BLUS31156</button>
                 <br>
-                <a href="#"><button onclick="install(3)">NPEB01283</button></a>
-                <a href="#"><button onclick="install(4)">NPUB31154</button></a>
-            </form>
+                <button onclick="install(3)">NPEB01283</button>
+                <button onclick="install(4)">NPUB31154</button>
             
         </section>
         <div id="megalink">
@@ -81,10 +79,10 @@
     <script src="/js/webmanmodwebcommands.js">
     </script>
     <script>
-        var blespkg = "https://cdn.discordapp.com/attachments/1111481336578965644/1111482463609425930/3taonlinebles.pkg";
-        var bluspkg = "https://cdn.discordapp.com/attachments/1111481336578965644/1111483447924510753/3taonlineblus.pkg";
-        var npebpkg = "https://cdn.discordapp.com/attachments/1111481336578965644/1111483948401430538/3taonlinenpeb.pkg";
-        var npubpkg = "https://cdn.discordapp.com/attachments/1111481336578965644/1111484717737447573/3taonlinenpub.pkg";
+        var blespkg = "https://cdn.discordapp.com/attachments/1111481336578965644/1129933760238977205/3TA_Online_BLES01807_1.12_AIO.pkg";
+        var bluspkg = "https://cdn.discordapp.com/attachments/1111481336578965644/1129933759806976001/3TA_Online_BLUS31156_1.12_AIO.pkg";
+        var npebpkg = "https://cdn.discordapp.com/attachments/1111481336578965644/1129933759400116284/3TA_Online_NPEB01283_1.12_AIO.pkg";
+        var npubpkg = "https://cdn.discordapp.com/attachments/1111481336578965644/1129933760666808400/3TA_Online_NPUB31154_1.12_AIO.pkg";
 
         var ps3webmaninstall = document.getElementById('ps3webman');
         var header = document.getElementById('header1');
@@ -95,6 +93,14 @@
 
         function install(num)
         {
+            if (num == 1)
+            {
+                PS3AutoInstallPKG("127.0.0.1", blespkg);
+            }
+            if (num == 2)
+            {
+                PS3AutoInstallPKG("127.0.0.1", bluspkg);
+            }
             if (num == 3)
             {
                 //NPEB
