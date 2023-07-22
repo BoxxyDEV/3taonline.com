@@ -55,4 +55,9 @@ main form button {
     border-radius: 30px;
     text-decoration: none;
     line-height: 4;
+    text-align: center;
+}
+
+#PS3Webman {
+    text-align: center;
 }
