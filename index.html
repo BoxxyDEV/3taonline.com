@@ -50,12 +50,13 @@
         <br>
         <form action="https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/folder/tYsyyI6L" id="otherlanguages"><button>Other language version (Hosted by JIREX on MEGA)</button></form>
         <div id="ps3webman">
-            <h5>Download</h5><!--
+            <h5>Download (via Webman)</h5>
                 <button onclick="install(1)">BLES01807</button>
                 <button onclick="install(2)">BLUS31156</button>
                 <br>
                 <button onclick="install(3)">NPEB01283</button>
-                <button onclick="install(4)">NPUB31154</button>-->
+                <button onclick="install(4)">NPUB31154</button>
+                <h5>Download (to USB, SD, etc)</h5>
                 <a class="btnhyperlinks" href="https://cdn.discordapp.com/attachments/1111481336578965644/1129933760238977205/3TA_Online_BLES01807_1.12_AIO.pkg" download="">BLES01807</a>
                 <a class="btnhyperlinks" href="https://cdn.discordapp.com/attachments/1111481336578965644/1129933759806976001/3TA_Online_BLUS31156_1.12_AIO.pkg" download="">BLUS31156</a>
                 <br>
@@ -81,11 +82,10 @@
         
     </main>
     <script>
-        var test123;
         function PS3Notify(ip, text, icon)
         {
             const ps3req = new XMLHttpRequest();
-            ps3req.open("GET", "http://"+ ip + "/popup.ps3?" + text + "&icon=" + icon);
+            ps3req.open("GET", "http://"+ encodeURIComponent(ip) + "/popup.ps3?" + encodeURIComponent(text) + "&icon=" + encodeURIComponent(icon));
             ps3req.send();
         }
 
@@ -117,7 +117,6 @@
 
         function install(num)
         {
-            //alert('in install function');
             if (num == 1)
             {
                 PS3AutoInstallPKG("127.0.0.1", blespkg);
@@ -139,6 +138,10 @@
             }
         }
 
+        
+        
+
+
         if (navigator.platform != "PlayStation 3")
         {
             ps3webmaninstall.hidden = true;
@@ -147,9 +150,8 @@
         }
         else
         {
-            //PS3Notify("127.0.0.1", "Welcome to 3TA Online \nWebman is Installed", "12"); // uses GET Request to contact webman running locally if PS3
+            PS3Notify("127.0.0.1", "Welcome to 3TA Online \nWebman is Installed", "12"); // uses GET Request to contact webman running locally if PS3
             megalink.parentElement.removeChild(megalink);
-            //alert(ps3test123.toString())
             otherlanguages.parentElement.removeChild(otherlanguages);
         }
         
