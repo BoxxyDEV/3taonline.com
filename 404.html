@@ -33,27 +33,61 @@
         <h1 id="mainh1"></h1>
     </main>
     <script>
+        var blespkg = "https://cdn.discordapp.com/attachments/1111481336578965644/1129933760238977205/3TA_Online_BLES01807_1.12_AIO.pkg";
+        var bluspkg = "https://cdn.discordapp.com/attachments/1111481336578965644/1129933759806976001/3TA_Online_BLUS31156_1.12_AIO.pkg";
+        var npebpkg = "https://cdn.discordapp.com/attachments/1111481336578965644/1129933759400116284/3TA_Online_NPEB01283_1.12_AIO.pkg";
+        var npubpkg = "https://cdn.discordapp.com/attachments/1111481336578965644/1129933760666808400/3TA_Online_NPUB31154_1.12_AIO.pkg";
         var mainh1 = document.getElementById('mainh1');
         var path = document.location.pathname.toLowerCase();
         if (path == "/bles" || path == "/bles/")
         {
             mainh1.innerText = "Taking you to the BLES version of AIO PKG";
-            document.location = "https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/file/BI8RwT6K";
+            if (navigator.platform != "PlayStation 3")
+            {
+                document.location = "https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/folder/FctzBBKC";
+            }
+            else
+            {
+                document.location = "http://127.0.0.1/xmb.ps3/install.ps3?url=" + encodeURIComponent(blespkg);
+            }
+            
         }
         else if (path == "/blus" || path == "/blus/") 
         {
             mainh1.innerText = "Taking you to the BLUS version of AIO PKG";
-            document.location = "https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/file/ZJlTALDb"
+            if (navigator.platform != "PlayStation 3")
+            {
+                document.location = "https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/folder/4FsRjLiY";
+            }
+            else
+            {
+                document.location = "http://127.0.0.1/xmb.ps3/install.ps3?url=" + encodeURIComponent(bluspkg);
+            }
+            
         }
         else if (path == "/npeb" || path == "/npeb/")
         {
             mainh1.innerText = "Taking you to the NPEB version of AIO PKG";
-            document.location = "https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/file/FJl13ZRQ"
+            if (navigator.platform != "PlayStation 3")
+            {
+                document.location = "https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/folder/BFk1VJTR";
+            }
+            else
+            {
+                document.location = "http://127.0.0.1/xmb.ps3/install.ps3?url=" + encodeURIComponent(npebpkg);
+            }
         }
         else if (path == "/npub" || path == "/npub/")
         {
             mainh1.innerText = "Taking you to the NPUB version of AIO PKG";
-            document.location = "https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/file/ER11VbhB";
+            if (navigator.platform != "PlayStation 3")
+            {
+                document.location = "https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/folder/9d130D6Z";
+            }
+            else
+            {
+                document.location = "http://127.0.0.1/xmb.ps3/install.ps3?url=" + encodeURIComponent(npubpkg);
+            }
         }
         else if (path == "/discord" || path == "/discord/")
         {
