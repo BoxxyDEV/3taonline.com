@@ -31,7 +31,7 @@
     </style>
 </head>
 <body>
-    <header id="header1" style="opacity: 0;">
+    <header id="header1">
         <a href="/"><img src="images/3taologo.webp" alt="" width="92"></a>
         <div id="links">
             <a href="/discord">Discord</a>
@@ -142,18 +142,24 @@
         
 
 
-        if (navigator.platform != "PlayStation 3")
+        if (navigator.platform == "PlayStation 3")
         {
-            ps3webmaninstall.hidden = true;
-            header.style.opacity = "255";
             
-        }
-        else
-        {
             PS3Notify("127.0.0.1", "Welcome to 3TA Online \nWebman is Installed", "12"); // uses GET Request to contact webman running locally if PS3
             megalink.parentElement.removeChild(megalink);
             otherlanguages.parentElement.removeChild(otherlanguages);
+            header.style.opacity = "0";
         }
+        else
+        {
+            ps3webmaninstall.hidden = true;
+            header.style.opacity = "255";
+        }
+
+        if ((navigator.userAgent.indexOf("Windows NT 5.1") != -1) && (navigator.userAgent.indexOf("Safari") != -1) && (navigator.userAgent.indexOf("Chrome") == -1)) {
+            header.style.position = "relative";
+        }
+
         
     </script>
 </body>
