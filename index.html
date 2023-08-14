@@ -2,98 +2,160 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="shortcut icon" href="/3tafavicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/css/styles.css">
     <title>3TA Online</title>
     <meta content="3TA Online" property="og:title">
     <meta content="3TA Online is a revival project/community. check us out." property="og:description">
     <meta content="https://3taonline.com" property="og:url">
     <meta content="https://3taonline.com/images/3taologo.webp" property="og:image">
     <meta content="#2636c4" data-react-helmet="true" name="theme-color">
-    <!--Google fonts code-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <style>
-        main button {
-            padding: 15px;
-            border-radius: 30px;
-            border: none;
-            background-color: #2636c4;
-            color: white;
-        }
-
-        #ps3webman  {
-            align-items: center;
-        }
-    </style>
 </head>
 <body>
-    <header id="header1">
-        <a href="/"><img src="images/3taologo.jpg" alt="" width="92"></a>
-        <div id="links">
-            <a href="/discord">Discord</a>
-            <a href="https://www.youtube.com/@3TAOnline">YouTube</a>
-        </div>
-    </header>
-    <main>
-        <h1>Welcome to 3TA Online!</h1>
-        <p>3TA Online is revival project/community for GTA 5 on the PS3. <br>Check us out on <a href="https://discord.gg/3taonline">discord.gg/3taonline</a></p>
-        <br style="height: 30px;">
-        <h4>Download the 1.12 All-in-one PKG (with Jobs fixed) maintained by <a href="https://www.youtube.com/@JIREX">@JIREX (JIREX#4205)</a></h4>
-        <h5>How to Install</h5>
-        <div id="buttons">
-            <a href="/en/install/?disc" class="btnhyperlinks">Guide (English)</a>
-        </div>
+    <div id="header"> <!-- Using div instead of semantic tags because the PS3 does not support them -->
+        <a href="/">
+        <img src="/images/3ta_online_logo.png" alt="" height="70">
+        </a>
+        <a href="/news/" class="headerhyperlinks">News</a>
+    </div>
+    <div id="hero-image">
+        <h1 id="herotext">3TA Online</h1>
+        <p>a GTA Online revival community on PlayStation 3.</p>
+        
         <br>
-        <form action="https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/folder/tYsyyI6L" id="otherlanguages"><button>Other language version (Hosted by JIREX on MEGA)</button></form>
-        <div id="ps3webman">
-            <h5>Download (via Webman)</h5>
-                <button onclick="install(1)">BLES01807</button>
-                <button onclick="install(2)">BLUS31156</button>
+        <a href="#downloadsection" class="btnhyperlinks">Download</a>
+        <a href="#installationguide" class="btnhyperlinks">How to Install</a>
+        <a href="/discord" class="btnhyperlinks">Discord</a>
+        <br>
+        <p><i style="color: black;">Updated: 14th of August 2023</i></p>
+    </div>
+    <div id="main">
+        <section id="installationguide">
+            <h2>How to Install</h2>
+            <h4>Prerequisites</h4>
+            <ul>
+                <li>A PS3 running CFW/HEN</li>
+                <li>A PC and a Flash Drive/PS3 FTP access (unless using webman and the ONE-CLICK install)</li>
+            </ul>
+            <h3 id="pcinstructionstitle">Using a PC Install or you can use the auto-installer which is easier on the PS3 <a href="https://github.com/aldostools/webMAN-MOD/releases">with Webman Mod</a></h3>
+            <ol id="pcinstructions">
+                <li>Transfer PKG onto the root of the USB/SD Card</li>
+                <li>Go to Install Packages -> standard -> Install the file you just downloaded</li>
+            </ol>
+            <div id="ps3install">
+                <h3 id="usingdiscordcdn">Using Discord CDN</h3>
+                <ol>
+                    <li>Click on file put it on your USB/SD card or if you have patches install it to /dev_hdd0/packages</li>
+                    <li>Go to the game tab and click on Package Manager and Install Package Files</li>
+                    <li>if you have it on a USB/SD Card go to standard and if you installed it to /dev_hdd0/packages select PS3 System Storage</li>
+                </ol>
+            </div>
+        </section>
+        <section id="downloadsection">
+            <h2>Downloads</h2>
+            <div id="megalink">
+                <h3 style="margin: 0;">Mega</h3>
+                <a href="https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/file/FAlBlYpZ" class="btnhyperlinks">BLES01807</a>
+                <a href="https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/file/IA0jUSqQ" class="btnhyperlinks">BLUS31156</a>
                 <br>
-                <button onclick="install(3)">NPEB01283</button>
-                <button onclick="install(4)">NPUB31154</button>
-                <h5>Download (to USB, SD, etc)</h5>
-                <a class="btnhyperlinks" href="https://cdn.discordapp.com/attachments/1111481336578965644/1129933760238977205/3TA_Online_BLES01807_1.12_AIO.pkg" download="">BLES01807</a>
-                <a class="btnhyperlinks" href="https://cdn.discordapp.com/attachments/1111481336578965644/1129933759806976001/3TA_Online_BLUS31156_1.12_AIO.pkg" download="">BLUS31156</a>
-                <br>
-                <a class="btnhyperlinks" href="https://cdn.discordapp.com/attachments/1111481336578965644/1129933759400116284/3TA_Online_NPEB01283_1.12_AIO.pkg" download="">NPEB01283</a>
-                <a class="btnhyperlinks" href="https://cdn.discordapp.com/attachments/1111481336578965644/1129933760666808400/3TA_Online_NPUB31154_1.12_AIO.pkg" download="">NPUB31154</a>
-        </div>
-        <div id="megalink">
-            <h5>Disc versions (MEGA)</h5>
-            <form action="https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/folder/FctzBBKC" method="get">
-                <button>BLES01807</button>
-            </form>
-            <form action="https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/folder/4FsRjLiY" method="get">
-                <button>BLUS31156</button>
-            </form>
-            <h5>Digital versions (MEGA)</h5>
-            <form action="https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/folder/BFk1VJTR" method="get">
-                <button>NPEB01283</button>
-            </form>
-            <form action="https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/folder/9d130D6Z" method="get">
-                <button>NPUB31154</button>
-            </form>
+                <a href="https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/file/wc1BEIqK" class="btnhyperlinks">NPEB01283</a>
+                <a href="https://mega.nz/folder/tUkmmBjA#oOxlTlUOiKK0Ne4HuSXk4w/file/NFln3SjT" class="btnhyperlinks">NPUB31154</a>
+            </div>
+            <div id="ps3link">
+                <div id="webman">
+                    <h3>Auto-Installer (NEED WEBMAN)</h3>
+                    <div id="webmanlinks">
+                        <a href="#" onclick="PS3AutoInstallPKG('127.0.0.1', blespkg);" class="btnhyperlinks">BLES01807</a>
+                        <a href="#" onclick="PS3AutoInstallPKG('127.0.0.1', bluspkg);" class="btnhyperlinks">BLUS31156</a>
+                        <br>
+                        <a href="#" onclick="PS3AutoInstallPKG('127.0.0.1', npebpkg);" class="btnhyperlinks">NPEB01283</a>
+                        <a href="#" onclick="PS3AutoInstallPKG('127.0.0.1', npubpkg);" class="btnhyperlinks">NPUB31154</a>
+                    </div>
+                </div>
+                <div id="discorddl">
+                    <h3>Download the .PKG</h3>
+                    <div id="discordcdn">
+                        <a href="https://cdn.discordapp.com/attachments/1111481336578965644/1137913412073046046/3TA_Online_BLES.pkg" class="btnhyperlinks" download="">BLES01807</a>
+                        <a href="https://cdn.discordapp.com/attachments/1111481336578965644/1137913411691360306/3TA_Online_BLUS.pkg" class="btnhyperlinks" download="">BLUS31156</a>
+                        <br>
+                        <a href="https://cdn.discordapp.com/attachments/1111481336578965644/1137913412416962560/3TA_Online_NPEB.pkg" class="btnhyperlinks" download="">NPEB01283</a>
+                        <a href="https://cdn.discordapp.com/attachments/1111481336578965644/1137913670286987295/3TA_Online_NPUB.pkg" class="btnhyperlinks" download="">NPUB31154</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="socials">
+            <h3>3TA Online on Social Media</h3>
+            <div class="flexcenter">
+                <a href="/discord">
+                    <img src="/images/discord-mark-black.png" alt="" width="44" height="33">
+                    <p>Join our Discord</p>
+                </a>
+                <a href="https://twitter.com/3TAOnline">
+                    <img src="/images/xlogo.png" alt="" width="48" height="49">
+                    <p>Follow Us on X</p>
+                </a>
+            </div>
+            <div class="flexcenter">
+                <a href="https://www.tiktok.com/@3taonline">
+                    <img src="/images/tiktok.png" alt="" width="48" height="48">
+                    <p>Follow Us on TikTok</p>
+                </a>
+                <a href="https://youtube.com/@3TAonline">
+                    <img src="/images/youtube_social_icon_dark.png" alt="" width="45" height="45">
+                    <p>Check Us out on YouTube</p>
+                </a> 
+            </div>
         </div>
         
-    </main>
+    </div>
     <script>
-        function PS3Notify(ip, text, icon)
+        var header = document.getElementById("header");
+        var megalinks = document.getElementById("megalink");
+        var socialmedia = document.getElementById("socials");
+        var webman = document.getElementById("webman");
+        var webmanlinks = document.getElementById("webmanlinks"); // webman links not using so prob should just delete
+        var pcinstructions = document.getElementById("pcinstructions");
+        var ps3install = document.getElementById("ps3install");
+        var usingdiscordcdn = document.getElementById("usingdiscordcdn");
+        var ps3link = document.getElementById("ps3link");
+        var pcinstructionstitle = document.getElementById('pcinstructionstitle');
+        var hyperlinksheader = document.getElementById("hyperlinksheader");
+        const ps3req = new XMLHttpRequest();
+        var blespkg = "https://cdn.discordapp.com/attachments/1111481336578965644/1137913412073046046/3TA_Online_BLES.pkg";
+        var bluspkg = "https://cdn.discordapp.com/attachments/1111481336578965644/1137913411691360306/3TA_Online_BLUS.pkg";
+        var npebpkg = "https://cdn.discordapp.com/attachments/1111481336578965644/1137913412416962560/3TA_Online_NPEB.pkg";
+        var npubpkg = "https://cdn.discordapp.com/attachments/1111481336578965644/1137913670286987295/3TA_Online_NPUB.pkg";
+
+        var isWebman = true; // i am assuming but most likely and if fails will start using old fasion alert()
+        function startonfail()
         {
-            const ps3req = new XMLHttpRequest();
-            ps3req.open("GET", "http://"+ encodeURIComponent(ip) + "/popup.ps3?" + encodeURIComponent(text) + "&icon=" + encodeURIComponent(icon));
-            ps3req.send();
+            if (ps3req.status == 0) 
+            {
+                isWebman = false;
+                alert("Welcome to 3TAOnline\nCredits:\nOwner: Parker\nSite: Boxuga\nPKG: JIREX");
+                usingdiscordcdn.innerHTML = 'You do not have webman installed. Please install it at from Brewology to continue with the auto-installer. Otherwise, proceed with the manual install below :)'; 
+                //webman.parentElement.removeChild(webman);
+            }
+            else
+            {
+                usingdiscordcdn.innerHTML = 'Manual Install (RECOMENDED: ONE-CLICK INSTALL using Webman)'; 
+            }
         }
 
-        function PS3Delete(ip, path)
+        function PS3Notify(ip, text, icon)
         {
-            const ps3 = new XMLHttpRequest();
-            ps3.open("GET", "http://" + encodeURIComponent(ip) + "/delete.ps3/" + encodeURIComponent(path));
-            ps3.send();
+            if (isWebman)
+            {
+                ps3req.open("GET", "http://"+ encodeURIComponent(ip) + "/popup.ps3?" + encodeURIComponent(text) + "&icon=" + encodeURIComponent(icon));
+                ps3req.send();
+            }
+            else
+            {
+                alert(text);
+            }
+            
         }
 
         function PS3AutoInstallPKG(ip, downloadurl)
@@ -103,64 +165,21 @@
             ps3.send();
         }
 
-        var blespkg = "https://cdn.discordapp.com/attachments/1111481336578965644/1129933760238977205/3TA_Online_BLES01807_1.12_AIO.pkg";
-        var bluspkg = "https://cdn.discordapp.com/attachments/1111481336578965644/1129933759806976001/3TA_Online_BLUS31156_1.12_AIO.pkg";
-        var npebpkg = "https://cdn.discordapp.com/attachments/1111481336578965644/1129933759400116284/3TA_Online_NPEB01283_1.12_AIO.pkg";
-        var npubpkg = "https://cdn.discordapp.com/attachments/1111481336578965644/1129933760666808400/3TA_Online_NPUB31154_1.12_AIO.pkg";
-
-        var ps3webmaninstall = document.getElementById('ps3webman');
-        var header = document.getElementById('header1');
-        var megalink = document.getElementById('megalink');
-        var otherlanguages = document.getElementById('otherlanguages');
-
-        
-
-        function install(num)
-        {
-            if (num == 1)
-            {
-                PS3AutoInstallPKG("127.0.0.1", blespkg);
-                
-            }
-            if (num == 2)
-            {
-                PS3AutoInstallPKG("127.0.0.1", bluspkg);
-            }
-            if (num == 3)
-            {
-                //NPEB
-                PS3AutoInstallPKG("127.0.0.1", npebpkg);
-            }
-            if (num == 4)
-            {
-                //NPEB
-                PS3AutoInstallPKG("127.0.0.1", npubpkg);
-            }
-        }
-
-        
-        
-
-
         if (navigator.platform == "PlayStation 3")
         {
-            
-            PS3Notify("127.0.0.1", "Welcome to 3TA Online \nWebman is Installed", "12"); // uses GET Request to contact webman running locally if PS3
-            megalink.parentElement.removeChild(megalink);
-            otherlanguages.parentElement.removeChild(otherlanguages);
-            header.style.opacity = "0";
+            megalinks.parentElement.removeChild(megalinks);
+            socialmedia.parentElement.removeChild(socialmedia);
+            PS3Notify("127.0.0.1", "Welcome to 3TAOnline\nCredits:\nOwner: Parker\nSite: Boxuga\nPKG: JIREX", "12");
+            setTimeout(startonfail, 1000); // webman detection idk how i found this seemed to work seeing as the PS3 uses such an old version of javascript
+            pcinstructions.parentElement.removeChild(pcinstructions);
+            pcinstructionstitle.parentElement.removeChild(pcinstructionstitle);
         }
         else
         {
-            ps3webmaninstall.hidden = true;
-            header.style.opacity = "255";
+            ps3install.hidden = true;
+            ps3link.hidden = true;
+            isWebman = false;
         }
-
-        if ((navigator.userAgent.indexOf("Windows NT") != -1) && (navigator.userAgent.indexOf("Safari") != -1) && (navigator.userAgent.indexOf("Chrome") == -1)) {
-            header.style.position = "relative";
-        }
-
-        
     </script>
 </body>
 </html>
